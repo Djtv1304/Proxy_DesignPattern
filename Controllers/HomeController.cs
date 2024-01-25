@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Proxy_DesignPattern.Models;
+using Proxy_DesignPattern.Models.Proxy;
 using System.Diagnostics;
 
 namespace Proxy_DesignPattern.Controllers
@@ -8,6 +9,9 @@ namespace Proxy_DesignPattern.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        private Cuenta cuenta = new Cuenta(1, "Cuenta de ahorros", 100);
+        private ICuenta cuentaProxy = new CuentaProxy();
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -15,6 +19,17 @@ namespace Proxy_DesignPattern.Controllers
 
         public IActionResult Index()
         {
+
+            ViewBag.cuentaSaldo = cuentaProxy.mostrarSaldo(cuenta);
+
+            cuenta = cuentaProxy.depositarDinero(cuenta, 50);
+
+            ViewBag.cuentaSaldoDepositado = cuentaProxy.mostrarSaldo(cuenta);
+
+            cuenta = cuentaProxy.retirarDinero(cuenta, 20);
+
+            ViewBag.cuentaSaldoRetirado = cuentaProxy.mostrarSaldo(cuenta);
+
             return View();
         }
 

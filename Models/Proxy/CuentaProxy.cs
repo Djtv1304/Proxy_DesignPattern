@@ -24,22 +24,26 @@
 
         }
 
-        public void mostrarSaldo(Cuenta cuenta)
+        public string mostrarSaldo(Cuenta cuenta)
         {
+
+            string mensaje = "";
             
             if(cuentaReal == null)
             {
 
                 cuentaReal = new CuentaBancoAImpl();
-                cuentaReal.mostrarSaldo(cuenta);
+                mensaje = cuentaReal.mostrarSaldo(cuenta);
 
             }
             else
             {
 
-                cuentaReal.mostrarSaldo(cuenta);
+				mensaje = cuentaReal.mostrarSaldo(cuenta);
 
             }
+
+            return mensaje;
 
         }
 

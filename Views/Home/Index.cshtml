@@ -3,6 +3,66 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+	<section class="dark">
+		<div class="container py-4">
+			<h1 class="h1 text-center" id="pageHeaderTitle">My Cards Dark</h1>
+			
+			@if (ViewBag.cuentaSaldo != null)
+			{
+				<article class="postcard dark blue">
+					<a class="postcard__img_link" href="#">
+						<img class="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title" />
+					</a>
+					<div class="postcard__text">
+						<h1 class="postcard__title blue"><a href="#">Saldo de la cuenta - Patrón Proxy</a></h1>
+						<div class="postcard__subtitle small">
+							<time datetime="2024-01-25 09:00:00">
+								<i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+							</time>
+						</div>
+						<div class="postcard__bar"></div>
+						<div class="postcard__preview-txt d-flex justify-content-center align-items-center"><h3>@ViewBag.cuentaSaldo</h3></div>
+
+					</div>
+				</article>
+			}
+			@if (ViewBag.cuentaSaldoDepositado != null)
+			{
+				<article class="postcard dark red">
+					<a class="postcard__img_link" href="#">
+					<img class="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+					</a>
+					<div class="postcard__text">
+						<h1 class="postcard__title red"><a href="#">Depósito en la cuenta - Patrón Proxy</a></h1>
+						<div class="postcard__subtitle small">
+							<time datetime="2024-01-25 09:00:00">
+								<i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+							</time>
+						</div>
+						<div class="postcard__bar"></div>
+						<div class="postcard__preview-txt d-flex justify-content-center align-items-center"><h3>@ViewBag.cuentaSaldoDepositado</h3></div>
+
+					</div>
+				</article>
+			}
+			@if (ViewBag.cuentaSaldoRetirado != null)
+			{
+				<article class="postcard dark green">
+					<a class="postcard__img_link" href="#">
+					<img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
+					</a>
+					<div class="postcard__text">
+						<h1 class="postcard__title green"><a href="#">Retiro en la cuenta - Patrón Proxy</a></h1>
+						<div class="postcard__subtitle small">
+							<time datetime="2024-01-25 09:00:00">
+								<i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+							</time>
+						</div>
+						<div class="postcard__bar"></div>
+						<div class="postcard__preview-txt d-flex justify-content-center align-items-center"><h3>@ViewBag.cuentaSaldoRetirado</h3></div>
+					</div>
+				</article>
+			}
+		</div>
+	</section>
 </div>

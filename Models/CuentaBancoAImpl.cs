@@ -25,10 +25,10 @@
 
         }
 
-        public void mostrarSaldo(Cuenta cuenta)
+        public string mostrarSaldo(Cuenta cuenta)
         {
 
-            Console.WriteLine("Saldo actual: " + cuenta.saldoInicial);
+            return("Saldo actual: " + cuenta.saldoInicial);
 
         }
 
